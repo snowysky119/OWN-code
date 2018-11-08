@@ -1,0 +1,45 @@
+import java.util.Random;
+import java.util.Arrays;
+public class Test{
+public static void main(String[] args) {
+
+    int [] cont=new int[8];
+    Featrues feat=new Featrues();
+    feat.Grade(cont);
+    feat.Sortgrade(cont);
+    System.out.println(feat.Calcu(cont));
+    
+}
+}
+
+class Featrues{
+
+public void Grade(int[] b){
+for(int i=0;i<8;i++){
+b[i]=(int)(Math.random()*100);
+}
+}
+
+public void Sortgrade(int [] b){
+
+for(int i=0;i<b.length;i++){
+  for(int j=1;j<b.length;j++){
+  int a=0;
+   if(b[j-1]>b[j]){
+     a=b[j-1];
+     b[j-1]=b[j];
+     b[j]=a;
+   }
+  }
+}
+}
+
+
+public double Calcu(int[] b){
+int sum=0;
+for(int i=1;i<b.length-2;i++){
+    sum=sum+b[i];
+  }
+return sum/(b.length-2);
+}
+}
